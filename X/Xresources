@@ -1,0 +1,91 @@
+!----------------------------------------------
+!	file: .Xdefaults
+!	author: Chris Borrrell
+!	modified: 24 Dec 09
+!	vim:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
+!----------------------------------------------
+
+
+! Fonts
+!URxvt*font:		xft:Ubuntu Mono:pixelsize=36:antilias=true:hinting=true:Regular
+URxvt*font:		xft:Ubuntu Mono:pixelsize=16
+URxvt*boldFont: xft:Ubuntu Mono:bold:pixelsize=16
+
+Xft*dpi:		96
+Xft*antialias:	true
+Xft*hinting:		Full
+Xft*hintstyle:		hintslight
+!Xft*rgba:		rgb
+
+URxvt.transparent:	true
+!URxvt.inheritPixmap:	true
+URxvt.scrollBar:	false
+URxvt.saveLines:	32767
+URxvt.cursorBlink:	true
+!URxvt.cursorColor:	#FFFFFF
+!URxvt.color:		#FFFFFF
+!URxvt.shading:		30
+!URxvt.tintcolor:	blue
+!URxvt.depth:		24
+!URxvt.visualBell:	true
+!URxvt.fading: 		30 
+!URxvt.fadeColor: 	[0]black
+URxvt.blurRadius:	10
+
+
+! Copy Paste URLS
+URxvt.perl-ext-common:default,clipboard,matcher,keyboard-select
+URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:   /usr/bin/firefox
+URxvt.underlineURLs:  True
+URxvt.matcher.button: 1 
+URxvt.keysym.M-Escape:perl:keyboard-select:activate
+URxvt.keysym.M-c:     perl:clipboard:copy
+URxvt.keysym.M-v:     perl:clipboard:paste
+URxvt.keysym.M-C-v:   perl:clipboard:paste_escaped
+!URxvt.copyCommand:   xsel -ib
+!URxvt.pasteCommand:  xsel -ob
+! Comment this if you dont want copy when text is selected
+URxvt.clipboard.autocopy: true
+
+
+gnuplot*background: white
+gnuplot*textColor: black
+gnuplot*borderColor: black
+gnuplot*axisColor: black
+gnuplot*line1Color: red
+gnuplot*line2Color: green
+gnuplot*line3Color: blue
+gnuplot*line4Color: magenta
+gnuplot*line5Color: cyan
+gnuplot*line6Color: sienna
+gnuplot*line7Color: orange
+gnuplot*line8Color: coral
+
+*background: #0f0f0f
+*foreground: #c8c8c8
+
+!black
+*color0:  #251f1f
+*color8:  #5e5e5e
+!red
+*color1:  #eb4509
+*color9:  #eb4509
+!green
+*color2:  #94e76b
+*color10: #95e76b
+!yellow
+*color3:  #ffac18
+*color11: #ffac18
+!blue
+*color4:  #46aede
+*color12: #46aede
+!magenta
+*color5:  #e32c57
+*color13: #e32c57
+!cyan
+*color6:  #d6dbac
+*color14: #d6dbac
+!white
+*color7:  #efefef
+*color15: #efefef

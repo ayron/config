@@ -1,0 +1,133 @@
+" Ayron's vimrc.
+" You're welcome.
+
+" Vundle
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'tpope/vim-fugitive'
+" Bundle 'scrooloose/nerdtree'
+Bundle 'klen/python-mode'
+filetype plugin indent on
+
+colorscheme badwolf     " awesome colorscheme (find on github)
+syntax enable           " enable syntax processing
+
+" Powerline setup
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+set laststatus=2
+
+" Python-mode
+" Activate rope
+" Keys:
+" K             Show python docs
+" <Ctrl-Space>  Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 1
+set completeopt=menu
+
+
+" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 0
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+
+" Tabs
+set tabstop=2           " number of visual spaces per TAB
+set shiftwidth=2        " number of spaces for autoindent
+set softtabstop=2       " number of spaces in tab when editing
+set expandtab           " tabs are spaces
+set smarttab            " todo
+set autoindent
+
+" UI
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set cursorline          " highlight current line
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+set showmatch           " highlight matching [{()}]
+set ruler               " show cursor position
+set textwidth=79
+
+" Searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+set ignorecase          " ignore case in searches
+set smartcase           " override ingorecase if search contains an uppercase
+nnoremap # <nop>        " I hate this
+
+" Folding
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+nnoremap <space> za     " space open/close folds
+set foldmethod=indent   " fild based on indent level
+
+" Movement
+nnoremap j gj           " move vertically by wrapped lines
+nnoremap k gk           "
+nnoremap B ^		" move to beginnning of line
+nnoremap E $            " move to end of line
+nnoremap $ <nop>        
+nnoremap ^ <nop>
+nnoremap gV `[v`]       " highlight last inserted text
+
+" Leader
+let mapleader=","       " leader is comma
+inoremap jk <esc>       " jk is esc
+
+set mouse=a             " Enable use of mouse
+set modeline            " Those vim lines at the start or end of files
+
+set wrap! go+=b sidescroll=1  " Enable side scrolling
+set scrolloff=999             " Keep cursor centered
+set sidescrolloff=999         "
+
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Define some formats
+au BufNewFile,BufRead *.ino set filetype=cpp
+au BufNewFile,BufRead *.pde set filetype=cpp
+au BufNewFile,BufRead *.cls set filetype=tex
+au BufNewFile,BufRead *.launch set filetype=xml
+au BufNewFile,BufRead *.md set filetype=markdown
+
+let g:tex_flavor='latex'
+set shellslash
+set grepprg=grep\ -nH\ $*
+
+

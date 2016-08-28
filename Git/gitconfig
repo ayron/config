@@ -1,0 +1,6 @@
+[user]
+	email = ayron@gmail.com
+	name = Ayron Catteau
+	signingkey = 25760818
+[push]
+	default = simple
