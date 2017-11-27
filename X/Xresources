@@ -8,14 +8,19 @@
 
 ! Fonts
 !URxvt*font:		xft:Ubuntu Mono:pixelsize=36:antilias=true:hinting=true:Regular
-URxvt*font:		xft:Ubuntu Mono:pixelsize=16
-URxvt*boldFont: xft:Ubuntu Mono:bold:pixelsize=16
+URxvt*font:		xft:Ubuntu Mono:pixelsize=17
+URxvt*boldFont: xft:Ubuntu Mono:bold:pixelsize=17
 
 Xft*dpi:		96
 Xft*antialias:	true
 Xft*hinting:		Full
 Xft*hintstyle:		hintslight
 !Xft*rgba:		rgb
+
+! :Bind C-0, C-+ and C-= to activate small, medium, and big font size resp.     
+#URxvt.keysym.C-0:     command:\033]710;-*-dina-medium-r-normal--13-*-*-*-*-*-*-*\007
+#URxvt.keysym.C-minus: command:\033]710;-*-dina-medium-r-normal--15-*-*-*-*-*-*-*\007
+#URxvt.keysym.C-equal: command:\033]710;-*-dina-medium-r-normal--16-*-*-*-*-*-*-*\007
 
 URxvt.transparent:	true
 !URxvt.inheritPixmap:	true
@@ -47,6 +52,8 @@ URxvt.keysym.M-C-v:   perl:clipboard:paste_escaped
 !URxvt.pasteCommand:  xsel -ob
 ! Comment this if you dont want copy when text is selected
 URxvt.clipboard.autocopy: true
+
+
 
 
 gnuplot*background: white
